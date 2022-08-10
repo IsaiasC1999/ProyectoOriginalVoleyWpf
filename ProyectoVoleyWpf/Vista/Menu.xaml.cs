@@ -39,5 +39,10 @@ namespace ProyectoVoleyWpf.Vista
         {
             MostrarVistas.Content = MenuControlador.VistaCuota;
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            MostrarVistas.Content = MenuControlador.VistaUtilidades;
+        }
     }
 }

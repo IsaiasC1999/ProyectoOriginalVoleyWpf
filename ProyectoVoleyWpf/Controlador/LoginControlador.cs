@@ -1,8 +1,10 @@
 ﻿using ProyectoVoleyWpf.Servicios;
 using ProyectoVoleyWpf.Vista;
+using ProyectoVoleyWpf.Vista.MenuVistas;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 
 namespace ProyectoVoleyWpf.Controlador
 {
@@ -40,8 +42,15 @@ namespace ProyectoVoleyWpf.Controlador
 
                
             }
+            else
+            {
 
-           
+                Login.etiError.Visibility = Visibility.Visible;
+
+
+            }
+
+
         } 
 
 

@@ -13,10 +13,14 @@ namespace ProyectoVoleyWpf.Controlador
     {
         private readonly IServiciosMenu serviciosMenu = new ServiciosMenu();
         private readonly IServiciosJugador serviciosJugador = new ServiciosJugador();
+        private readonly IServiciosCuota serviciosCuota = new ServiciosCuota();
+
         
         public static Jugadores VistaJugadores = new Jugadores();
         public static Inicio VistaInicio = new Inicio();
+        
         public static CuotaPage VistaCuota = new CuotaPage();
+        public static UtilidadesPage VistaUtilidades = new UtilidadesPage();
        
 
         #region MetodosVistaJugador
@@ -68,7 +72,46 @@ namespace ProyectoVoleyWpf.Controlador
 
         }
 
-        #endregion 
+
+        public void FormularioPagoJugador(int id)
+        {
+
+            serviciosJugador.MostrarFormularioPago(id);
+        }
+
+        public void ConfirmacionDePago(Cuota cuota1)
+        {
+
+            serviciosJugador.ConfirmaPago(cuota1);
+        }
+        #endregion
+
+
+
+        #region SeccionCuotas
+
+
+        public void BuscarJugadorCuotas(string NombreOApellido)
+        {
+
+            var resu= serviciosCuota.BuscarJugador(NombreOApellido);
+            if (resu != null)
+            {
+
+
+                VistaCuota.dgvJugadoresPage.ItemsSource = resu;
+
+                VistaCuota.dgvJugadoresPage.Columns[0].Visibility = Visibility.Hidden;
+
+
+            }
+
+        }
+
+
+        #endregion
+
+
 
 
     }

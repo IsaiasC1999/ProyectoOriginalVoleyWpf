@@ -97,7 +97,7 @@
                          VerticalContentAlignment="Center"
                          HorizontalContentAlignment="Left"
                          BorderBrush="White"
-                         Margin="22,164,23,196">
+                         Margin="22,164,23,196" TouchEnter="txbUsuario_TouchEnter" TextChanged="txbUsuario_TextChanged">
                 </TextBox>
                 <Label Foreground="White" Margin="0,212,0,0" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Top" FontSize="20">Contraseña</Label>
 
@@ -121,7 +121,10 @@
                         Margin="22,314,23,46"
                         FontSize="20"
                         Foreground="White"
-                        FontWeight="Bold" Click="Button_Click">Ingresar</Button>
+                        FontWeight="Bold" Click="Button_Click">Ingresar
+                </Button>
+
+                <Label Foreground="White" x:Name="etiError" HorizontalAlignment="Center" Visibility="Hidden" FontWeight="Bold"  VerticalAlignment="Top" Margin="0,355,0,0">Usuario y/o Contraseña Incorrectas</Label>
 
             </Grid>
         </Grid>

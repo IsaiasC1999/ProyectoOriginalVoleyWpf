@@ -14,6 +14,9 @@ namespace ProyectoVoleyWpf.Modelo
         [Required]
         public int IdJugador { get; set; }
         [Required]
+        public int Monto { get; set; }
+
+        [Required]
         public Jugador Jugador { get; set; }
 
     }

@@ -255,10 +255,11 @@
             </Viewbox>
 
 
-            <Button Style="{DynamicResource BotonesFomulario}" Height="40" x:Name="btnGuardar" Foreground="White" FontSize="20" FontWeight="DemiBold" Margin="416,250,214,211" Background="#1e91ed" Click="btnGuardar_Click">Agregar</Button>
-            <Button Style="{DynamicResource BotonesFomulario}" Height="40" x:Name="btnVolver" Foreground="White" FontSize="20" FontWeight="DemiBold" Margin="602,438,28,25" Background="#ed7a1e" Content="Volver"/>
-            <Button Height="40" Style="{DynamicResource BotonesFomulario}" Foreground="White" Background="#ee2091" Width="170" FontSize="20" FontWeight="DemiBold" Margin="603,252,25,209" Click="Button_Click"  >Actulizar</Button>
+            <Button Style="{DynamicResource BotonesFomulario}" Height="40" x:Name="btnGuardar" Foreground="White" FontSize="20" FontWeight="DemiBold" Margin="416,250,13,211" Background="#1e91ed" Click="btnGuardar_Click">Agregar</Button>
+            <Button  Visibility="Hidden" Style="{DynamicResource BotonesFomulario}" Height="40" x:Name="btnVolver" Foreground="White" FontSize="20" FontWeight="DemiBold" Margin="602,438,28,25" Background="#ed7a1e" Content="Volver"/>
+            <Button Height="40" Style="{DynamicResource BotonesFomulario}" Foreground="White" Background="#ee2091" x:Name="btnActulizar" Width="370" FontSize="20" FontWeight="DemiBold" Margin="415,250,13,211" Click="btnActulizar_Click"   >Actulizar</Button>
             <Label Foreground="White" x:Name="etiId" Width="10" Height="10" Margin="83,25,707,468"></Label>
+
             <Button Style="{DynamicResource BotonesFomulario}" Foreground="#2b3a5c" FontWeight="Bold" FontSize="15" VerticalContentAlignment="Center" Background="#1e91ed" Height="40" Width="40" Padding="0"  Margin="750,8,8,453" Click="Button_Click_1" >X</Button>
         </Grid>
     </Border>

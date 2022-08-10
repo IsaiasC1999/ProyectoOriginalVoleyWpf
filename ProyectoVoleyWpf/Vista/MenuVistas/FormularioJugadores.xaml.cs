@@ -44,7 +44,19 @@ namespace ProyectoVoleyWpf.Vista.MenuVistas
             j1.Seguro = Seguro();
 
 
-            Controlador.agregar(j1);
+            if( j1.Nombre == "" && j1.Apellido == "")
+            {
+                MessageBox.Show("Algunos campos estan vacios");
+
+
+            }
+
+            else
+            {
+                Controlador.agregar(j1);
+
+
+            }
 
             txbNombre.Text = "";
             txbApellido.Text = "";
@@ -82,6 +94,18 @@ namespace ProyectoVoleyWpf.Vista.MenuVistas
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+           
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnActulizar_Click(object sender, RoutedEventArgs e)
+        {
+
+
             var cambiosJugador = new Jugador();
 
 
@@ -97,7 +121,7 @@ namespace ProyectoVoleyWpf.Vista.MenuVistas
 
             var Controlador = new MenuControlador();
 
-            Controlador.EditarJugador(id,cambiosJugador);
+            Controlador.EditarJugador(id, cambiosJugador);
 
 
             txbNombre.Text = "";
@@ -109,12 +133,10 @@ namespace ProyectoVoleyWpf.Vista.MenuVistas
             rbSexoF.IsChecked = false;
             rbSexoM.IsChecked = false;
 
+            MessageBox.Show("El jugador de actualizo correctamente");
 
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
             this.Close();
+
         }
     }
 }

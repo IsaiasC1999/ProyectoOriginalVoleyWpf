@@ -33,11 +33,34 @@ namespace ProyectoVoleyWpf
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var admistradosLogin = new LoginControlador();
+            
             admistradosLogin.Ingresar(txbUsuario.Text, txbContraseña.Password.ToString());
+            txbUsuario.Text = "";
+            txbContraseña.Clear();
 
-                    
+
         }
 
-        
+        private void etiError_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void txbUsuario_TouchEnter(object sender, TouchEventArgs e)
+        {
+
+
+        }
+
+        private void txbUsuario_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txbUsuario.Text != "")
+            {
+
+                etiError.Visibility = Visibility.Hidden;
+
+            }
+        }
     }
 }

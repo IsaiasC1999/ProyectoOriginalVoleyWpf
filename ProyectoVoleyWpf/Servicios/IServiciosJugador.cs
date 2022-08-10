@@ -1,4 +1,5 @@
 ﻿using ProyectoVoleyWpf.Modelo;
+using ProyectoVoleyWpf.Modelo.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,7 +17,10 @@ namespace ProyectoVoleyWpf.Servicios
 
         public void EditarJugador(int id, Jugador j1);
 
-
+        public void MostrarFormularioPago(int id);
         public void Borrar(int id);
+
+
+        public void ConfirmaPago(Cuota cuota1);
     }
 }

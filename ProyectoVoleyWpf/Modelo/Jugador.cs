@@ -27,6 +27,20 @@ namespace ProyectoVoleyWpf.Modelo
 
         public List<Cuota> Cuotas { get; set; }
         
+
+
+        public bool ModeloValido(Jugador j1)
+        {
+
+            if(j1.Nombre == null && j1.Apellido == null)
+            {
+
+                return false;
+            }
+
+            return true;
+
+        }
         
     }
 }

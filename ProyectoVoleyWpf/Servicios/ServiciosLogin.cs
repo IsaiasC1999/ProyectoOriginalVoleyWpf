@@ -18,9 +18,9 @@ namespace ProyectoVoleyWpf.Servicios
 
                 var resultado = resu.Where(x => x.Usuario == Usuario && x.Contraseña == Contraseña);
 
+                var jugador = resultado.ToList();
 
-
-                if (resultado == null)
+                if (jugador.Count == 0 )
                 {
                     return false;
 

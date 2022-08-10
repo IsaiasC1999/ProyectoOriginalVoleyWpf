@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using ProyectoVoleyWpf.Vista.MenuVistas;
+using ProyectoVoleyWpf.Modelo.ViewModels;
+using System.Windows;
 
 namespace ProyectoVoleyWpf.Servicios
 {
@@ -52,7 +54,9 @@ namespace ProyectoVoleyWpf.Servicios
                 form.txbDni.Text = j1.Dni;
                 form.dpFechaNacimiento.SelectedDate = Convert.ToDateTime(j1.FechaNacimiento);
                 form.txbDomicilio.Text = j1.Domicilio;
-                
+                form.btnGuardar.Visibility = System.Windows.Visibility.Hidden;
+
+
                 if(j1.Sexo == "Masculino") form.rbSexoM.IsChecked = true;
                     
                 else form.rbSexoF.IsChecked = true;
@@ -62,6 +66,9 @@ namespace ProyectoVoleyWpf.Servicios
 
                  form.Show();
 
+                form.btnGuardar.Visibility = System.Windows.Visibility.Collapsed;
+
+                
 
             }
 
@@ -109,6 +116,39 @@ namespace ProyectoVoleyWpf.Servicios
 
             }
 
+        }
+
+
+        public void MostrarFormularioPago(int id)
+        {
+
+            using (var db = new DataContext())
+            {
+
+                var j1 = db.Jugadores.Find(id);
+
+                var formPago = new FormularioDePago();
+
+                formPago.etiNombre.Content = j1.Nombre + " " + j1.Apellido;
+                formPago.etiId.Content = j1.Id.ToString();
+                formPago.Show();
+
+
+            }
+
+        }
+
+        public void ConfirmaPago(Cuota cuota1)
+        {
+            using ( var db = new DataContext())
+            {
+
+                db.Cuotas.Add(cuota1);
+
+                db.SaveChanges();
+                  
+
+            }
         }
     }
 }
